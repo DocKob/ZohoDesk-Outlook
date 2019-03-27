@@ -9,14 +9,14 @@
   <!-- Begin Basic Settings: Add-in metadata, used for all versions of Office unless override provided. -->
 
   <!-- IMPORTANT! Id must be unique for your add-in, if you reuse this manifest ensure that you change this id to a new GUID. -->
-  <Id>9505786a-635d-45cf-93e0-6b0bc89bd7fe</Id>
+  <Id>cc7af589-66c1-4b23-876d-eb407329b8a4</Id>
 
   <!--Version. Updates from the store only get triggered if there is a version change. -->
   <Version>1.0.0.0</Version>
   <ProviderName>Hitea</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
-  <DisplayName DefaultValue="Zoho Desk Add-in" />
+  <DisplayName DefaultValue="ZohoDesk Add-in" />
   <Description DefaultValue="Forward to Zoho Desk"/>
 
   <!-- Icon for your add-in. Used on installation screens and the add-ins dialog. -->
@@ -24,7 +24,7 @@
   <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/hi-res-icon.png"/>
 
   <!--If you plan to submit this add-in to the Office Store, uncomment the SupportUrl element below-->
-  <SupportUrl DefaultValue="https://localhost:3000/support.html" />
+  <SupportUrl DefaultValue="https://hitea.fr" />
 
   <!-- Domains that will be allowed when navigating. For example, if you use ShowTaskpane and then have an href link, navigation will only be allowed if the domain is on this list. -->
   <AppDomains>
@@ -77,8 +77,7 @@
               <!-- Up to 6 Groups added per Tab -->
               <Group id="msgReadGroup">
                 <Label resid="groupLabel" />
-                <!-- Launch the add-in : task pane button -->
-                <Control xsi:type="Button" id="msgForwardToZohoDesk">
+                        <Control xsi:type="Button" id="msgForwardToZohoDesk">
         <Label resid="ForwardToZohoDeskLabel"/>
         <Supertip>
           <Title resid="ForwardToZohoDeskTitle"/>
@@ -90,24 +89,25 @@
           <bt:Image size="80" resid="icon80"/>
         </Icon>
         <Action xsi:type="ExecuteFunction">
-          <FunctionName>ForwardToZohoDesk</FunctionName>
+          <FunctionName>Forward</FunctionName>
         </Action>
       </Control>
-                      <Control xsi:type="Button" id="msgShowSettings">
-        <Label resid="ShowSettingsLabel"/>
-        <Supertip>
-          <Title resid="ShowSettingsTitle"/>
-          <Description resid="ShowSettingsDesc"/>
-        </Supertip>
-        <Icon>
-          <bt:Image size="16" resid="icon16"/>
-          <bt:Image size="32" resid="icon32"/>
-          <bt:Image size="80" resid="icon80"/>
-        </Icon>
-        <Action xsi:type="ExecuteFunction">
-          <FunctionName>ShowSettings</FunctionName>
-        </Action>
-      </Control>
+                <!-- Launch the add-in : task pane button -->
+                <Control xsi:type="Button" id="msgShowSettings">
+                  <Label resid="ShowSettingsLabel" />
+                  <Supertip>
+                    <Title resid="ShowSettingsTitle" />
+                    <Description resid="ShowSettingsDesc" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="icon16" />
+                    <bt:Image size="32" resid="icon32" />
+                    <bt:Image size="80" resid="icon80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="messageReadTaskPaneUrl" />
+                  </Action>
+                </Control>
                 <!-- Go to http://aka.ms/ButtonCommands to learn how to add more Controls: ExecuteFunction and Menu -->
               </Group>
             </OfficeTab>
@@ -125,17 +125,18 @@
       </bt:Images>
       <bt:Urls>
         <bt:Url id="functionFile" DefaultValue="https://localhost:3000/function-file/function-file.html"/>
+        <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://localhost:3000/index.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="groupLabel" DefaultValue="Zoho Desk Add-in"/>
         <bt:String id="ForwardToZohoDeskLabel" DefaultValue="Forward to Zoho Desk"/>
         <bt:String id="ForwardToZohoDeskTitle" DefaultValue="Forward to Zoho Desk"/>
-                <bt:String id="ShowSettingsLabel" DefaultValue="Settings"/>
+        <bt:String id="ShowSettingsLabel" DefaultValue="Settings"/>
         <bt:String id="ShowSettingsTitle" DefaultValue="Settings"/>
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="ForwardToZohoDeskDesc" DefaultValue="Forward to Zoho Desk to automatically open a ticket."/>
-                <bt:String id="ShowSettingsDesc" DefaultValue="Add-in Settings."/>
+        <bt:String id="ShowSettingsDesc" DefaultValue="Add-in Settings."/>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>

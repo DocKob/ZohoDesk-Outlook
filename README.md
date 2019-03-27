@@ -12,7 +12,7 @@ Forward to Zoho Desk to automatically open a ticket.
  - Open Powershell in the root folder
 
 ```
-nmp install
+npm install
 npm start
 ```
 
