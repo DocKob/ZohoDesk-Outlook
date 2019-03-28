@@ -39,7 +39,7 @@ function ForwardToDesk() {
 function getConfig() {
     var config = {};
 
-    config.zohodeskemail = Office.context.roamingSettings.get('zoho-email');
+    config.zohodeskemail = Office.context.roamingSettings.get('zohodesk-email');
 
     return config;
 }

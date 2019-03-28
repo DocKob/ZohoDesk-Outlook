@@ -17,7 +17,7 @@ Office.initialize = (reason) => {
 async function desksettings() {
     config = getConfig();
     config.zohodeskemail = $('#zoho-email').val();
-    Office.context.roamingSettings.set('zoho-email', config.zohodeskemail);
+    Office.context.roamingSettings.set('zohodesk-email', config.zohodeskemail);
     Office.context.roamingSettings.saveAsync();
     ForwardToDesk();
 }
@@ -45,7 +45,7 @@ function ForwardToDesk() {
 function getConfig() {
     var config = {};
 
-    config.zohodeskemail = Office.context.roamingSettings.get('zoho-email');
+    config.zohodeskemail = Office.context.roamingSettings.get('zohodesk-email');
 
     return config;
 }
