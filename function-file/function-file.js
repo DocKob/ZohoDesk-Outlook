@@ -1,9 +1,7 @@
 var config;
 
 // The initialize function must be run each time a new page is loaded
-Office.initialize = reason => {
-
-};
+Office.initialize = function () {}
 
 function Forward() {
     config = getConfig();
