@@ -12,12 +12,12 @@
   <Id>cc7af589-66c1-4b23-876d-eb407329b8a4</Id>
 
   <!--Version. Updates from the store only get triggered if there is a version change. -->
-  <Version>1.0.0.0</Version>
+  <Version>1.0.1.2</Version>
   <ProviderName>Hitea</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <!-- The display name of your add-in. Used on the store and various places of the Office UI such as the add-ins dialog. -->
   <DisplayName DefaultValue="ZohoDesk Add-in" />
-  <Description DefaultValue="Forward to Zoho Desk"/>
+  <Description DefaultValue="Forward to Zoho Desk to automatically open a ticket."/>
 
   <!-- Icon for your add-in. Used on installation screens and the add-ins dialog. -->
   <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png" />
@@ -75,21 +75,6 @@
               <!-- Up to 6 Groups added per Tab -->
               <Group id="msgReadGroup">
                 <Label resid="groupLabel" />
-                        <Control xsi:type="Button" id="msgForwardToZohoDesk">
-        <Label resid="ForwardToZohoDeskLabel"/>
-        <Supertip>
-          <Title resid="ForwardToZohoDeskTitle"/>
-          <Description resid="ForwardToZohoDeskDesc"/>
-        </Supertip>
-        <Icon>
-          <bt:Image size="16" resid="icon16"/>
-          <bt:Image size="32" resid="icon32"/>
-          <bt:Image size="80" resid="icon80"/>
-        </Icon>
-        <Action xsi:type="ExecuteFunction">
-          <FunctionName>Forward</FunctionName>
-        </Action>
-      </Control>
                 <!-- Launch the add-in : task pane button -->
                 <Control xsi:type="Button" id="msgShowSettings">
                   <Label resid="ShowSettingsLabel" />
@@ -122,15 +107,12 @@
         <bt:Image id="icon80" DefaultValue="https://localhost:3000/assets/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="functionFile" DefaultValue="https://localhost:3000/function-file/function-file.html"/>
         <bt:Url id="messageReadTaskPaneUrl" DefaultValue="https://localhost:3000/index.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="groupLabel" DefaultValue="Zoho Desk Add-in"/>
-        <bt:String id="ForwardToZohoDeskLabel" DefaultValue="Forward to Zoho Desk"/>
-        <bt:String id="ForwardToZohoDeskTitle" DefaultValue="Forward to Zoho Desk"/>
-        <bt:String id="ShowSettingsLabel" DefaultValue="Settings"/>
-        <bt:String id="ShowSettingsTitle" DefaultValue="Settings"/>
+        <bt:String id="ShowSettingsLabel" DefaultValue="Forward to Zoho Desk"/>
+        <bt:String id="ShowSettingsTitle" DefaultValue="Forward to Zoho Desk"/>
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="ForwardToZohoDeskDesc" DefaultValue="Forward to Zoho Desk to automatically open a ticket."/>

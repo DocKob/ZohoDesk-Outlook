@@ -12,7 +12,7 @@
         if (config && config.zohodeskemail) {
             var user = config.zohodeskemail;
             $('#zoho-email').val(user);
-        } else {}
+        }
         $('#app-body').show();
     };
 
